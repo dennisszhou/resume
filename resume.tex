@@ -1,0 +1,166 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Graduate Curriculum Vitae
+% LaTeX Template
+% Version 1.2 (3/28/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Rensselaer Polytechnic Institute 
+% (http://www.rpi.edu/dept/arc/training/latex/resumes/)
+%
+% Modified by:
+% Daniel L Marks <xleafr@gmail.com> 3/28/2015
+%
+% Important note:
+% This template requires the res.cls file to be in the same directory as the
+% .tex file. The res.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You can have multiple style options the legal options ones are:
+%
+%   centered:   the name and address are centered at the top of the page 
+%               (default)
+%
+%   line:       the name is the left with a horizontal line then the address to
+%               the right
+%
+%   overlapped: the section titles overlap the body text (default)
+%
+%   margin:     the section titles are to the left of the body text
+%       
+%   11pt:       use 11 point fonts instead of 10 point fonts
+%
+%   12pt:       use 12 point fonts instead of 10 point fonts
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[margin,11pt]{res}  
+
+% Default font is the helvetica postscript font
+\usepackage{helvet}
+
+% Increase text height
+\textheight=700pt
+
+\begin{document}
+
+%-------------------------------------------------------------------------------
+%   NAME AND ADDRESS SECTION
+%-------------------------------------------------------------------------------
+\name{Dennis Zhou}
+
+% Note that addresses can be used for other contact information:
+% -phone numbers
+% -email addresses
+% -linked-in profile
+
+\address{\centerline{US Citizen}\\ \centerline{dennisszhou@gmail.com $\bullet$ 651-442-8757}}
+
+% Uncomment to add a third address
+%\address{Address 3 line 1\\Address 3 line 2\\Address 3 line 3}
+%-------------------------------------------------------------------------------
+
+\begin{resume}
+%-------------------------------------------------------------------------------
+%   Interests
+%-------------------------------------------------------------------------------
+\section{INTERESTS}
+Scheduling, Resource Utilization
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+%   EDUCATION SECTION
+%-------------------------------------------------------------------------------
+\section{EDUCATION}
+\textbf{University of Wisconsin}, Madison, WI\hfill 09/2016 - 05/2018\\
+{\sl Master of Science}, Computer Sciences\\
+Advised by Professors Remzi and Andrea Arpaci-Dusseau\\
+Overall GPA: 4.0
+
+\textbf{Georgia Institute of Technology}, Atlanta, GA\hfill 08/2011 - 05/2014\\
+{\sl Bachelor of Science}, Computer Science\\
+Threads: Information Internetworking and Systems \& Architecture\\
+Overall GPA: 3.89\hspace{10mm}Major GPA: 4.0
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+%   COMPUTER SKILLS SECTION
+%-------------------------------------------------------------------------------
+\section{PROGRAMMING}
+
+\textbf{Proficient}: C, Java \\
+\textbf{Familiar}: Python, Perl, C++
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+%   EXPERIENCE SECTION
+%-------------------------------------------------------------------------------
+% Modify the format of each position
+\begin{format}
+\employer{l}\dates{r}\\
+\title{l}\location{r}\\
+\body\\
+\end{format}
+%-------------------------------------------------------------------------------
+
+\section{EXPERIENCE}
+\employer{\textbf{Facebook Inc.}}
+\location{New York, NY}
+\dates{07/2018 - Present}
+\title{\sl{Software Engineer}}
+\begin{position}
+Kernel Team\\
+Co-maintainer of Linux's percpu memory allocator since 02/2018 (v4.16)
+\end{position}
+
+\employer{\textbf{Facebook Inc.}}
+\location{New York, NY}
+\dates{05/2017 - 08/2017}
+\title{\sl{Software Engineer Intern}}
+\begin{position}
+Kernel Team\\
+Linux kernel contributor - percpu memory allocator
+\end{position}
+
+\employer{\textbf{University of Wisconsin}}
+\location{Madison, WI}
+\dates{01/2017 - 05/2018}
+\title{\sl{Research Assistant}}
+\begin{position}
+Worked with the Microsoft Gray Systems Lab
+\end{position}
+
+\employer{\textbf{University of Wisconsin}}
+\location{Madison, WI}
+\dates{09/2016 - 12/2016}
+\title{\sl{Teaching Assistant}}
+\begin{position}
+CS 537 – Introduction to Operating Systems
+\end{position}
+
+\employer{\textbf{Amazon Inc.}}
+\location{Seattle, WA}
+\dates{07/2014 - 07/2015}
+\title{\sl{Software Development Engineer}}
+\begin{position}
+Kindle Bookstore\\
+Launched the Bundles/Series page and Book Browser for iOS
+\end{position}
+
+\section{ACTIVITIES}
+Alumnus of Phi Kappa Tau\\
+Member of the Georgia Tech Club Tennis Team (2011 - 2014)\\
+Enjoys snowboarding and rock climbing
+
+\end{resume}
+\end{document}
