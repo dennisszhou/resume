@@ -215,17 +215,17 @@
 
 \def\@printcentername{\begingroup
   % print the name centered
-  \leavevmode\hbox to \textwidth{\hfil\@tablebox{\namefont\@name}\hfil}\par
+  \leavevmode\hbox to 6.5in{\hfil\@tablebox{\namefont\@name}\hfil}\par
   \@ifundefined{@addressone}{%
     % do nothing
   }{
     \@ifundefined{@addressthree}{
         \@ifundefined{@addresstwo}{
           % only one address
-          \leavevmode\hbox to \textwidth{\hfil\@tablebox{\@addressone}\hfil}\par
+          \leavevmode\hbox to 6.5in{\hfil\@tablebox{\@addressone}\hfil}\par
         }{
           % two addresses
-          \leavevmode\hbox to \textwidth{\@tablebox{\@addressone}\hfil
+          \leavevmode\hbox to 6.5in{\@tablebox{\@addressone}\hfil
                          \@tablebox{\@addresstwo}}\par
         }
     }{   % three addresses
@@ -290,15 +290,15 @@
 \newskip\sectionskip
 \newdimen\resumewidth
 
-\resumewidth=6.5in
 \sectionskip=3.5ex plus 1ex minus -.2ex % values stolen from LaTeX
+\resumewidth=6.75in
 
 \def\newsectionwidth#1{%
              \sectionwidth=#1
              \textwidth=\resumewidth
              \advance\textwidth-\sectionwidth
              \hsize=\textwidth
-             \hoffset=\sectionwidth
+             \hoffset=1.4in
 }
 
 
@@ -444,7 +444,7 @@
 \let\@@section\relax
 \def\ds@overlapped{\ifx\@@section\relax\newsectionwidth{0.5in}\let
   \@@section\unboxed@sectiontitle\fi}
-\def\ds@margin{\ifx\@@section\relax\newsectionwidth{1.3in}\let
+\def\ds@margin{\ifx\@@section\relax\newsectionwidth{1.5in}\let
   \@@section\boxed@sectiontitle\fi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -474,7 +474,7 @@
 
 \def\fullline{      % hrules only listen to \hoffset
   \nointerlineskip  % so I have this code     
-  \moveleft\hoffset\vbox{\hrule width\textwidth}
+  \moveleft1.55in\vbox{\hrule width 6.8in}
   \nointerlineskip
 }
 
@@ -797,8 +797,8 @@
 \pagestyle{empty}  % don't want page numbers
 
 \begin{format}
-\title{l}\employer{r}\\
-\location{l}\dates{r}\\
+\employer{l}\dates{r}\\
+\title{l}\location{r}\\
 \body\\
 \end{format}
 
