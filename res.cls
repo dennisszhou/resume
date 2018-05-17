@@ -216,25 +216,27 @@
 \def\@printcentername{\begingroup
   % print the name centered
   \leavevmode\hbox to 6.5in{\hfil\@tablebox{\namefont\@name}\hfil}\par
-  \@ifundefined{@addressone}{%
-    % do nothing
-  }{
-    \@ifundefined{@addressthree}{
-        \@ifundefined{@addresstwo}{
-          % only one address
-          \leavevmode\hbox to 6.5in{\hfil\@tablebox{\@addressone}\hfil}\par
-        }{
-          % two addresses
-          \leavevmode\hbox to 6.5in{\@tablebox{\@addressone}\hfil
-                         \@tablebox{\@addresstwo}}\par
-        }
-    }{   % three addresses
-          \leavevmode\hbox to \textwidth{
-                         \@tablebox{\@addressone}\hfil
-                         \@tablebox{\@addresstwo}\hfil
-                         \@tablebox{\@addressthree}}\par
-    }
-  }%
+  \leavevmode\hbox to 6.5in{\hfil\@tablebox{\@addressone}\hfil}\par
+  \leavevmode\hbox to 6.5in{\hfil\@tablebox{\@addresstwo}\hfil}\par
+%  \@ifundefined{@addressone}{%
+%    % do nothing
+%  }{
+%    \@ifundefined{@addressthree}{
+%        \@ifundefined{@addresstwo}{
+%          % only one address
+%          \leavevmode\hbox to 6.5in{\hfil\@tablebox{\@addressone}\hfil}\par
+%        }{
+%          % two addresses
+%          \leavevmode\hbox to 6.5in{\@tablebox{\@addressone}\hfil
+%                         \@tablebox{\@addresstwo}}\par
+%        }
+%    }{   % three addresses
+%          \leavevmode\hbox to \textwidth{
+%                         \@tablebox{\@addressone}\hfil
+%                         \@tablebox{\@addresstwo}\hfil
+%                         \@tablebox{\@addressthree}}\par
+%    }
+%  }%
   % Add a horizontal line after name
   \fullline
 \endgroup}
