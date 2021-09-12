@@ -799,8 +799,8 @@
 \pagestyle{empty}  % don't want page numbers
 
 \begin{format}
-\employer{l}\dates{r}\\
-\title{l}\location{r}\\
+\employer{l}\location{r}\\
+\title{l}\dates{r}\\
 \body\\
 \end{format}
 
