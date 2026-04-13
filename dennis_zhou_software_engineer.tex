@@ -1,182 +1,124 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Medium Length Graduate Curriculum Vitae
-% LaTeX Template
-% Version 1.2 (3/28/15)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Rensselaer Polytechnic Institute 
-% (http://www.rpi.edu/dept/arc/training/latex/resumes/)
-%
-% Modified by:
-% Daniel L Marks <xleafr@gmail.com> 3/28/2015
-%
-% Important note:
-% This template requires the res.cls file to be in the same directory as the
-% .tex file. The res.cls file provides the resume style used for structuring the
-% document.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt]{article}
 
-%-------------------------------------------------------------------------------
-%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%-------------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[letterpaper,margin=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% You can have multiple style options the legal options ones are:
-%
-%   centered:   the name and address are centered at the top of the page 
-%               (default)
-%
-%   line:       the name is the left with a horizontal line then the address to
-%               the right
-%
-%   overlapped: the section titles overlap the body text (default)
-%
-%   margin:     the section titles are to the left of the body text
-%       
-%   11pt:       use 11 point fonts instead of 10 point fonts
-%
-%   12pt:       use 12 point fonts instead of 10 point fonts
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.15em,itemsep=0.08em,topsep=0.08em,parsep=0pt}
 
-\documentclass[margin,11pt]{res}  
+\newcommand{\resumeSection}[1]{
+  \vspace{0.45em}
+  {\large\bfseries #1}\par
+  \vspace{0.12em}
+  \hrule
+  \vspace{0.28em}
+}
 
-% Default font is the helvetica postscript font
-\usepackage{helvet}
-
-% Increase text height
-\textheight=700pt
+\newcommand{\resumeRole}[4]{
+  \textbf{#1} \hfill #4 \\
+  \textit{#3} \hfill #2\par
+  \vspace{0.02em}
+}
 
 \begin{document}
 
-%-------------------------------------------------------------------------------
-%   NAME AND ADDRESS SECTION
-%-------------------------------------------------------------------------------
-\vspace*{-4.0em}
-\name{Dennis Zhou}
+\begin{center}
+{\LARGE\bfseries Dennis Zhou} \\
+\vspace{0.2em}
+US Citizen \\
+\vspace{0.1em}
+dennis@kernel.org $\bullet$ 651-442-8757 $\bullet$ San Francisco, CA
+\end{center}
 
-% Note that addresses can be used for other contact information:
-% -phone numbers
-% -email addresses
-% -linked-in profile
+\resumeSection{Summary}
+Staff software engineer with deep experience in Linux kernel, embedded systems,
+distributed systems, and storage.
+Focused on low-level systems, cross-stack debugging, and turning performance
+and reliability problems into measurable, repeatable engineering work.
 
-\address{US Citizen}
-\address{dennis@kernel.org $\bullet$ 651-442-8757 $\bullet$ San Francisco, CA}
+\vspace{0.28em}
 
-% Uncomment to add a third address
-%\address{Address 3 line 1\\Address 3 line 2\\Address 3 line 3}
-%-------------------------------------------------------------------------------
+Maintainer of the Linux kernel percpu memory allocator since v4.19 (09/2018).
 
-\begin{resume}
+\resumeSection{Experience}
+\resumeRole{Cruise LLC}{04/2024 -- 09/2025}{Staff Software Engineer}{San Francisco, CA}
+\textit{Senior Software Engineer II} \hfill 01/2023 -- 03/2024\par
+\vspace{0.02em}
+\begin{itemize}
+\item Led reliability recovery for AIM, an audio and collision-detection
+embedded system spanning FPGA and kernel; turned recurring test-vehicle
+failures into a layer-by-layer investigation and hardening effort.
+\item Reworked the debugging and recovery model with better logging,
+bench-level reproduction, targeted instrumentation, and re-architected code
+around coherent reset paths.
+\item Championed hardware changes for audio and collision detection on the
+future-generation program that simplified software and improved stability; the
+design became plan of record.
+\item Co-owned the Linux 5.4 to 5.15 upgrade across 10 devices on current and
+next-generation vehicle platforms.
+\item Built a Yocto shared-state cache on GCS with local artifact sync, cutting
+clean build times from 90 minutes to 5 minutes.
+\item Filesystems SME for Embedded Systems, debugging JFFS2/ext4 corruption and
+eMMC/dm-verity boot failures; root-caused BSP-induced corruption, improved
+userspace power-loss behavior, and upstreamed boot fixes.
+\item Advised on IRQ steering and CPU pinning for Ray training jobs on a GCP H100
+cluster, reducing host-workload contention.
+\end{itemize}
 
-%-------------------------------------------------------------------------------
-%   EXPERIENCE SECTION
-%-------------------------------------------------------------------------------
-\section{EXPERIENCE}
-\employer{\textbf{Cruise Llc.}}
-\location{San Francisco, CA}
-\dates{01/2023 - 09/2025}
-\title{\sl{Staff Software Engineer}}
-\begin{position}
-Software/Hardware co-design on future programs\\
-Supported Linux development across Embedded Systems\\
-Collaborated on ML training cluster efficiency targeting dataloader stragglers via resource isolation
-\end{position}
+\resumeRole{Snowflake Inc.}{10/2021 -- 01/2023}{Senior Software Engineer}{San Mateo, CA}
+\begin{itemize}
+\item Built a reproducible sandbox for the FoundationDB team to
+standardize cluster setup, workloads, and metrics collection.
+\item Integrated Prometheus and Grafana into the sandbox to
+replace custom/ad hoc data analysis workflows and make observability data a first-class
+citizen.
+\item Contributed to Unistore storage and blob-management work.
+\end{itemize}
 
+\resumeRole{Google Inc.}{04/2020 -- 09/2021}{Software Engineer}{New York, NY}
+\begin{itemize}
+\item Contributed to I/O efficiency, thread scale-out, and
+resource-accounting migration across the Colossus storage stack.
+\item Built Runner, an internal framework for repeatable microsecond-level
+benchmarking on the Colossus userspace client team.
+\item Replaced a manual one-host-at-a-time workflow with parallelized
+PR-based experiments, host-level reservations, and basic statistical analysis,
+making large-scale performance testing practical.
+\end{itemize}
 
-\employer{\textbf{Snowflake Inc.}}
-\location{San Mateo, CA}
-\dates{10/2021 - 01/2023}
-\title{\sl{Senior Software Engineer}}
-\begin{position}
-FoundationDB Performance/Storage Team\\
-Prototyped an observability framework with prometheus and grafana on AWS\\
-Contributed to blob storage management for unistore 
-\end{position}
+\resumeRole{Facebook Inc.}{07/2018 -- 04/2020}{Software Engineer}{New York, NY}
+\begin{itemize}
+\item Linux kernel contributor across percpu memory allocation, cgroups, and
+Btrfs; maintainer of the Linux percpu tree.
+\item Developed Btrfs Async Discard to move SSD discard off the transaction
+commit path, eliminating disk spikes that interfered with the main workload.
+\item Implemented Btrfs Zstandard compression support.
+\end{itemize}
 
-\employer{\textbf{Google Inc.}}
-\location{New York, NY}
-\dates{04/2020 - 09/2021}
-\title{\sl{Software Engineer}}
-\begin{position}
-Remote Flash Team\\
-Focused on I/O efficiency across the Colossus storage stack
-\end{position}
+\textit{Software Engineer Intern} \hfill 05/2017 -- 08/2017\par
+\vspace{0.02em}
+\begin{itemize}
+\item Redesigned and upstreamed the Linux percpu allocator.
+\item Replaced the prior area-map design with static bitmaps, cutting
+worst-case free time by up to 68x.
+\end{itemize}
 
-\employer{\textbf{Facebook Inc.}}
-\location{New York, NY}
-\dates{07/2018 - 04/2020}
-\title{\sl{Software Engineer}}
-\begin{position}
-Kernel Team\\
-Linux kernel contributor - percpu memory allocator, cgroups, btrfs
-\end{position}
-
-\vspace{-24pt}
-\employer{}
-\location{}
-\dates{05/2017 - 08/2017}
-\title{\sl{Software Engineer Intern}}
-\begin{position}
-Kernel Team\\
-Linux kernel contributor - percpu memory allocator
-\end{position}
-
-\employer{\textbf{University of Wisconsin}}
-\location{Madison, WI}
-\dates{01/2017 - 05/2018}
-\title{\sl{Research Assistant}}
-\begin{position}
-Worked with the Microsoft Gray Systems Lab on Sqlserver telemetry on Azure
-\end{position}
-
-\vspace{-24pt}
-\employer{}
-\location{}
-\dates{09/2016 - 12/2016}
-\title{\sl{Teaching Assistant}}
-\begin{position}
-CS 537 – Introduction to Operating Systems
-\end{position}
-
-%-------------------------------------------------------------------------------
-
-%-------------------------------------------------------------------------------
-%   PROGRAMMING SECTION
-%-------------------------------------------------------------------------------
-\section{PROGRAMMING}
-
-\textbf{Proficient}: C, Python, Java\\
-\textbf{Familiar}: C++, Golang, Perl\\
-\textbf{Linux}: Tree-maintainer of Linux's percpu memory allocator since v4.19\\
-https://git.kernel.org/pub/scm/linux/kernel/git/dennis/percpu.git
-%-------------------------------------------------------------------------------
-
-%-------------------------------------------------------------------------------
-%   EDUCATION SECTION
-%-------------------------------------------------------------------------------
-\section{EDUCATION}
-\textbf{University of Wisconsin}, Madison, WI\hfill 09/2016 - 05/2018\\
-{\sl Master of Science}, Computer Sciences, Overall GPA: 4.0\\
+\resumeSection{Education}
+\textbf{University of Wisconsin}, Madison, WI \hfill 09/2016 -- 05/2018 \\
+\textit{Master of Science}, Computer Sciences, Overall GPA: 4.0 \\
 Advised by Professors Remzi and Andrea Arpaci-Dusseau
 
-\vspace{-10pt}
-\textbf{Georgia Institute of Technology}, Atlanta, GA\hfill 08/2011 - 05/2014\\
-{\sl Bachelor of Science}, Computer Science, Major GPA: 4.0\\
+\vspace{0.18em}
+\textbf{Georgia Institute of Technology}, Atlanta, GA \hfill 08/2011 -- 05/2014 \\
+\textit{Bachelor of Science}, Computer Science, Major GPA: 4.0 \\
 Threads: Information Internetworking and Systems \& Architecture
-%-------------------------------------------------------------------------------
 
-%-------------------------------------------------------------------------------
-%   ACTIVITIES SECTION
-%-------------------------------------------------------------------------------
-\section{ACTIVITIES}
-Enjoys outdoor activities including: snowboarding, golf, climbing, and tennis.\\
-RPM Raceway Jersey City, NJ - \textbf{Fastest Lap Nov 2021}
-%-------------------------------------------------------------------------------
+\resumeSection{Activities}
+Enjoys outdoor activities including snowboarding, golf, climbing, and tennis. \\
+RPM Raceway Jersey City, NJ -- \textbf{Fastest Lap Nov 2021}
 
-\end{resume}
 \end{document}
